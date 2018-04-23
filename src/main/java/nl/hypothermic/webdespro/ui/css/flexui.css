@@ -1,0 +1,302 @@
+/******************************\
+ * > flexui.css             < *
+ * WebDesPro by hypothermic   *
+ * www.github.com/hypothermic *
+ * See LICENSE.txt for legal  *
+\******************************/
+
+/* Global UI properties */
+.flexui {
+    -fx-accent: #ff7700;
+    -fx-focus-color: #ff7700;
+}
+/* Menu bar */
+.flexui-menu {
+    -fx-background-color: #5e5e5e;
+    -fx-border-color: #5e5e5e;
+}
+
+.flexui-menu .label {
+    -fx-text-fill: white;
+}
+
+.menu-bar > .container > .menu-button:hover,
+.menu-bar > .container > .menu-button:focused,
+.menu-bar > .container > .menu-button:showing {
+    -fx-background-color: white;
+}
+
+.menu-bar > .container > .menu-button:hover > .label,
+.menu-bar > .container > .menu-button:focused > .label,
+.menu-bar > .container > .menu-button:showing > .label {
+    -fx-text-fill: #5e5e5e;
+}
+
+    /* Menu item */
+
+    .flexui-menu .menu-item {
+        -fx-background-color: white;
+        -fx-border-color: white;
+    }
+
+    .flexui-menu .menu-item .label {
+        -fx-text-fill: black;
+    }
+
+    .flexui-menu .menu-item:focused {
+        -fx-background-color: #ff7700;
+    }
+
+    .flexui-menu .menu-item:focused .label {
+        -fx-text-fill: white;
+    }
+
+    .flexui-menu .context-menu {
+        /*-fx-skin: "com.sun.javafx.scene.control.skin.ContextMenuSkin";*/
+        -fx-background-color: white;
+        -fx-background-insets: 0, 1, 2;
+        -fx-background-radius: 0 6 6 6, 0 5 5 5, 0 4 4 4;
+        /*-fx-padding: 0.333333em 0.083333em 0.666667em 0.083333em;*/
+    }
+
+    /*.context-menu:hover {
+        -fx-skin: "com.sun.javafx.scene.control.skin.ContextMenuSkin";
+        -fx-background-color: #ff7700;
+        -fx-background-insets: 0, 1, 2;
+        -fx-background-radius: 0 6 6 6, 0 5 5 5, 0 4 4 4;
+        -fx-padding: 0.333333em 0.083333em 0.666667em 0.083333em;
+    }*/
+    
+/* Top-right element, aka "logo", with minimize and exit buttons */
+.flexui-logo-cover {
+    -fx-background-color: #5e5e5e;
+    -fx-border-color: #5e5e5e;
+}
+
+.flexui-logo-text {
+    -fx-text-fill: rgba(255, 255, 255, 0.4);
+    -fx-text-align: right;
+}
+
+/*.flexui-logo-exitbtn {
+    -fx-focused-mark-color: transparent;
+}*/
+
+.flexui-logo-exitbtn:selected .mark {
+    -fx-background-color: transparent;
+}
+
+.flexui-logo-exitbtn .box {
+    -fx-background-color: #5e5e5e;
+    -fx-background-radius: 4em;
+    -fx-border-color: #ff1a00;
+    -fx-border-radius: 4em;
+}
+
+.flexui-logo-exitbtn:selected .box,
+.flexui-logo-exitbtn:hover .box {
+    -fx-background-color: #ff3720;
+}
+
+/*.flexui-logo-minbtn {
+    -fx-focused-mark-color: transparent;
+}*/
+
+.flexui-logo-minbtn:selected .mark {
+    -fx-background-color: transparent;
+}
+
+.flexui-logo-minbtn .box {
+    -fx-background-color: #5e5e5e;
+    -fx-background-radius: 4em;
+    -fx-border-color: #ff4300;
+    -fx-border-radius: 4em;
+}
+
+.flexui-logo-minbtn:selected .box,
+.flexui-logo-minbtn:hover .box {
+    -fx-background-color: #ff591e;
+}
+
+/* Left tool menu */
+.flexui-toolmenu-splitter {
+    -fx-background-color: #686868;
+    -fx-border-color: #686868;
+}
+
+.flexui-toolmenu-splitter:vertical > .split-pane-divider {
+   -fx-background-color: #5e5e5e;
+}
+
+/* Left tool menu's file explorer */
+.flexui-toolmenu-explorer {
+    -fx-background-color: #686868;
+}
+
+.flexui-toolmenu-explorer > .virtual-flow > .clipped-container > .sheet > .tree-cell .tree-disclosure-node .arrow {
+    -fx-background-color: white;
+}
+
+.flexui-toolmenu-explorer > .virtual-flow > .clipped-container > .sheet > .tree-cell:selected .tree-disclosure-node .arrow {
+    -fx-background-color: #686868;
+    /*-fx-shape: polygon(0 25%, 72% 25%, 100% 50%, 72% 75%, 0 75%);*/
+}
+
+.flexui-toolmenu-explorer .tree-cell {
+    -fx-background-color: #686868;
+    -fx-border-color: #686868;
+    -fx-text-fill: white;
+}
+
+.flexui-toolmenu-explorer .tree-cell:selected {
+    -fx-background-color: white;
+    -fx-text-fill: #686868 ;
+}
+
+.flexui-toolmenu-explorer .tree-cell:selected, .tree-cell:sub-tree-item {
+    -fx-background-color: white ;
+    -fx-text-fill: black;
+}
+
+.flexui-toolmenu-explorer-field {
+    /*-fx-background-color: #999999;*/
+    -fx-background-color: linear-gradient(#afafaf 0%, #999999 100%);
+    -fx-background-radius: 0.5em;
+    -fx-border-color: #383838;
+    -fx-border-radius: 0.5em;
+}
+
+.flexui-toolmenu-splitter-top  .scroll-pane {
+    -fx-background-color: black;
+}
+
+.flexui-toolmenu-splitter-top .scroll-bar:horizontal, .scroll-bar:vertical {
+    -fx-background-color:transparent; 
+}
+
+.flexui-toolmenu-splitter-top .increment-button, .decrement-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.flexui-toolmenu-splitter-top .scroll-bar:horizontal .track,
+.flexui-toolmenu-splitter-top .scroll-bar:vertical .track {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-radius: 0em;
+}
+
+.flexui-toolmenu-splitter-top .scroll-bar:horizontal .thumb,
+.flexui-toolmenu-splitter-top .scroll-bar:vertical .thumb {
+    -fx-background-color: white;
+    -fx-background-radius: 5em;
+}
+
+.corner {
+    -fx-background-color: transparent;
+}
+
+.flexui-toolmenu-explorer-browse {
+    -fx-background-color: linear-gradient(#afafaf 0%, #999999 100%);
+    -fx-background-radius: 0.5em;
+    -fx-border-color: #383838;
+    -fx-border-radius: 0.5em;
+    -fx-effect: null;
+}
+
+.flexui-toolmenu-explorer-field:hover,
+.flexui-toolmenu-explorer-field:focused {
+    -fx-border-color: #ff7700;
+}
+
+.flexui-toolmenu-explorer-browse:hover,
+.flexui-toolmenu-explorer-browse:focused {
+    -fx-border-color: #ff7700;
+}
+
+/* Main splitpane */
+.flexui-main-splitter {
+    -fx-background-color: #919191;
+    -fx-border-color: #7a7a7a;
+}
+
+.flexui-main-splitter:horizontal > .split-pane-divider {
+   -fx-background-color: #878787;
+}
+
+/* Sub splitpane */
+.flexui-main-subsplitter {
+    -fx-background-color: #7a7a7a;
+    -fx-border-color: #7a7a7a;
+}
+
+.flexui-main-subsplitter:vertical > .split-pane-divider {
+   -fx-background-color: #878787;
+}
+
+/* Web panel */
+.flexui-main-webc {
+    /* todo */
+}
+
+/* Webc dimension floating menu */
+.flexui-main-webc-float-bg {
+    -fx-background-color: rgba(0, 0, 0, 0.45);
+}
+
+.flexui-main-webc-float-bg .label {
+    -fx-text-fill: white;
+}
+
+    /* --- Webc dimension floating menu items --- */
+    .flexui-main-webc-float-bg .menu-item {
+        -fx-background-color: white;
+        -fx-border-color: white;
+    }
+
+    .flexui-main-webc-float-bg .menu-item .label {
+        -fx-text-fill: black;
+    }
+
+    .flexui-main-webc-float-bg .menu-item:focused {
+        -fx-background-color: #ff7700;
+    }
+
+    .flexui-main-webc-float-bg .menu-item:focused .label {
+        -fx-text-fill: white;
+    }
+
+    .flexui-main-webc-float-bg .context-menu {
+        /*-fx-skin: "com.sun.javafx.scene.control.skin.ContextMenuSkin";*/
+        -fx-background-color: white;
+        -fx-background-insets: 0, 1, 2;
+        -fx-background-radius: 0 6 6 6, 0 5 5 5, 0 4 4 4;
+        /*-fx-padding: 0.333333em 0.083333em 0.666667em 0.083333em;*/
+    }
+
+/* About screen */
+.flexui-about-bg {
+    -fx-background-color: rgba(0, 0, 0, 0.45);
+}
+
+.flexui-about-container {
+    -fx-background-color: rgba(0, 0, 0, 0.5);
+    -fx-border-color: #ff7700;
+    -fx-border-width: 0.6;
+}
+
+.flexui-about-x-title {
+    -fx-fill: rgba(255, 255, 255, 1);
+}
+
+.flexui-about-x-splitter {
+    -fx-fill: rgba(255, 199, 0, 0.6);
+}
+
+.flexui-about-x-subtitle {
+    -fx-fill: rgba(255, 255, 255, 0.75);
+}
+
+.flexui-about-x-legal {
+    -fx-fill: rgba(255, 255, 255, 0.3);
+}

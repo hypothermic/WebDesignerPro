@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- This file is part of WebDesPro by hypothermic (admin@hypothermic.nl, www.github.com/hypothermic).
+     It is licensed under the MIT License. See LICENSE.txt for more info. -->
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="1080.0" style="-fx-background-color: #8c8c8c;" styleClass="flexui" stylesheets="@css/flexui.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nl.hypothermic.webdespro.ui.InterfaceController">
+   <children>
+      <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefWidth="220.0" styleClass="flexui-toolmenu-splitter" stylesheets="@css/flexui.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="29.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" styleClass="flexui-toolmenu-splitter-top">
+               <children>
+                  <TreeView fx:id="explorer" prefHeight="200.0" prefWidth="200.0" showRoot="false" styleClass="flexui-toolmenu-explorer" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="35.0" />
+                  <TextField fx:id="explorerField" layoutY="2.0" maxHeight="25.0" minHeight="25.0" onAction="#onExplorerFieldEnter" prefHeight="25.0" prefWidth="156.0" styleClass="flexui-toolmenu-explorer-field" AnchorPane.leftAnchor="3.0" AnchorPane.topAnchor="5.0" />
+                  <Button fx:id="explorerBrowse" layoutX="159.0" layoutY="5.0" maxHeight="25.0" minHeight="25.0" mnemonicParsing="false" onAction="#onExplorerBrowse" prefHeight="25.0" prefWidth="53.0" styleClass="flexui-toolmenu-explorer-browse" text="Load" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="5.0">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                     <effect>
+                        <Shadow />
+                     </effect>
+                  </Button>
+               </children></AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
+        </items>
+      </SplitPane>
+      <MenuBar fx:id="menubar" maxHeight="31.0" minWidth="31.0" prefHeight="31.0" prefWidth="940.0" styleClass="flexui-menu" stylesheets="@css/flexui.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="140.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#onMaximizeRequested" text="Maximize" />
+                  <MenuItem mnemonicParsing="false" onAction="#onDeMaximizeRequested" text="Minimize" />
+                  <MenuItem mnemonicParsing="false" onAction="#onMinimizeRequested" text="Minimize to taskbar" />
+                  <MenuItem mnemonicParsing="false" onAction="#onExitRequested" text="Exit" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Foo bar" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="About">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#onMenuAboutOpen" text="Credits" />
+               </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <AnchorPane fx:id="logo" maxHeight="31.0" maxWidth="140.0" minHeight="31.0" minWidth="140.0" prefHeight="31.0" prefWidth="140.0" styleClass="flexui-logo-cover" stylesheets="@css/flexui.css" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label styleClass="flexui-logo-text" stylesheets="@css/flexui.css" text="v1.00-BETA" textAlignment="RIGHT" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Label>
+            <CheckBox fx:id="btnMinimize" layoutX="51.0" layoutY="7.0" mnemonicParsing="false" onAction="#onMinimizeRequested" styleClass="flexui-logo-minbtn" stylesheets="@css/flexui.css" textAlignment="RIGHT" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="31.0" AnchorPane.topAnchor="0.0" />
+            <CheckBox fx:id="btnExit" mnemonicParsing="false" onAction="#onExitRequested" styleClass="flexui-logo-exitbtn" stylesheets="@css/flexui.css" textAlignment="RIGHT" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="0.0" />
+         </children>
+      </AnchorPane>
+      <SplitPane dividerPositions="0.48014018691588783" layoutX="220.0" layoutY="31.0" prefHeight="160.0" prefWidth="200.0" styleClass="flexui-main-splitter" stylesheets="@css/flexui.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="220.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="31.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" stylesheets="@css/flexui.css">
+               <children>
+                  <TextArea fx:id="writer" layoutX="14.0" layoutY="17.0" prefHeight="554.0" prefWidth="377.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" styleClass="flexui-main-webc" stylesheets="@css/flexui.css">
+               <children>
+                  <WebView fx:id="webc" maxHeight="-1.0" maxWidth="-1.0" minHeight="-1.0" minWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" AnchorPane.bottomAnchor="165.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="165.0" />
+                  <AnchorPane layoutX="15.0" layoutY="528.0" maxHeight="35.0" minHeight="35.0" prefHeight="35.0" prefWidth="411.0" style="-fx-background-color: rgba(0, 0, 0, 0);" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
+                     <children>
+                        <MenuBar styleClass="flexui-main-webc-float-bg" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <menus>
+                              <Menu mnemonicParsing="false" text="Actions">
+                                <items>
+                                  <MenuItem mnemonicParsing="false" onAction="#onWebRefresh" text="Refresh" />
+                                </items>
+                              </Menu>
+                            <Menu mnemonicParsing="false" text="View">
+                              <items>
+                                <MenuItem mnemonicParsing="false" onAction="#onWebDimChangeDesktop" text="Landscape" />
+                                    <MenuItem mnemonicParsing="false" onAction="#onWebDimChangePhone" text="Portrait" />
+                              </items>
+                            </Menu>
+                          </menus>
+                        </MenuBar>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+      <BorderPane fx:id="aboutmenu" onMouseClicked="#onMenuAboutClose" prefHeight="200.0" prefWidth="200.0" styleClass="flexui-about-bg" stylesheets="@css/flexui.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <AnchorPane maxHeight="160.0" maxWidth="400.0" minHeight="160.0" minWidth="400.0" onMouseClicked="#onMenuAboutClose" prefHeight="160.0" prefWidth="400.0" styleClass="flexui-about-container" BorderPane.alignment="CENTER">
+               <children>
+                  <Text layoutX="137.6" layoutY="48.6" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="flexui-about-x-title" text="WebDesPro" textAlignment="CENTER" AnchorPane.bottomAnchor="106.2115234375" AnchorPane.leftAnchor="137.6" AnchorPane.rightAnchor="135.43808593749998" AnchorPane.topAnchor="28.1791015625">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="89.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="flexui-about-x-subtitle" text="Open-source web design software" AnchorPane.bottomAnchor="85.46689453125" AnchorPane.leftAnchor="88.01572265624998" AnchorPane.rightAnchor="89.38427734375" AnchorPane.topAnchor="58.93310546875" />
+                  <Line endX="100.0" fill="WHITE" layoutX="201.0" layoutY="56.0" startX="-100.0" stroke="WHITE" styleClass="flexui-about-x-splitter" AnchorPane.bottomAnchor="103.5" AnchorPane.leftAnchor="100.5" AnchorPane.rightAnchor="97.9" AnchorPane.topAnchor="54.900000000000006" />
+                  <Text layoutX="52.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="flexui-about-x-legal" text="Made by hypothermic, 2018, see LICENSE.txt" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="138.4" />
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+      <BorderPane fx:id="infoPopup" layoutX="10.0" layoutY="10.0" onMouseClicked="#onInfoPopupClose" prefHeight="200.0" prefWidth="200.0" styleClass="flexui-about-bg" stylesheets="@css/flexui.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <AnchorPane maxHeight="140.0" maxWidth="400.0" minHeight="140.0" minWidth="400.0" onMouseClicked="#onInfoPopupClose" prefHeight="140.0" prefWidth="400.0" styleClass="flexui-about-container" BorderPane.alignment="CENTER">
+               <children>
+                  <Text fx:id="infoTitle" layoutX="137.6" layoutY="48.6" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="flexui-about-x-title" text="Information" textAlignment="CENTER" AnchorPane.bottomAnchor="106.2115234375" AnchorPane.leftAnchor="137.0" AnchorPane.rightAnchor="137.0" AnchorPane.topAnchor="12.5">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="infoMessage" layoutX="320.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="flexui-about-x-subtitle" text="This popup was not created correctly :(" textOrigin="CENTER" AnchorPane.bottomAnchor="85.46689453125" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="50.0" />
+                  <Line endX="100.0" fill="WHITE" layoutX="201.0" layoutY="56.0" startX="-100.0" stroke="WHITE" styleClass="flexui-about-x-splitter" AnchorPane.bottomAnchor="103.5" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="40.0" />
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

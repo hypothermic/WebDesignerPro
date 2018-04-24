@@ -140,10 +140,17 @@
     -fx-background-color:transparent; 
 }
 
-.flexui-main-writer .increment-button, .decrement-button,
-.flexui-toolmenu-splitter-top .increment-button, .decrement-button {
+.flexui-main-writer .increment-button, .flexui-main-writer .decrement-button,
+.flexui-toolmenu-splitter-top .increment-button, .flexui-toolmenu-splitter-top .decrement-button {
     -fx-background-color: transparent;
     -fx-border-color: transparent;
+}
+
+.flexui-main-writer .increment-button .increment-arrow, .flexui-main-writer .decrement-button .decrement-arrow,
+.flexui-toolmenu-splitter-top .increment-button .increment-arrow, .flexui-toolmenu-splitter-top .decrement-button .decrement-arrow {
+    -fx-background-color: #ff7700;
+    -fx-border-color: #ff7700;
+    -fx-effect: null;
 }
 
 .flexui-main-writer .scroll-bar:horizontal .track,
@@ -161,6 +168,20 @@
 .flexui-toolmenu-splitter-top .scroll-bar:vertical .thumb {
     -fx-background-color: white;
     -fx-background-radius: 5em;
+}
+
+.flexui-main-writer .scroll-bar,
+.flexui-toolmenu-splitter-top .scroll-bar {
+    -fx-font-size: 15;
+}
+
+.flexui-main-writer .scroll-bar:horizontal,
+.flexui-main-writer .scroll-bar:vertical,
+.flexui-toolmenu-splitter-top .scroll-bar:horizontal,
+.flexui-toolmenu-splitter-top .scroll-bar:vertical {
+    -fx-pref-height: 15;
+    -fx-pref-width: 15;
+    -fx-padding: 2;
 }
 
 .corner {
@@ -241,6 +262,11 @@
 
 .flexui-main-subsplitter:vertical > .split-pane-divider {
    -fx-background-color: #878787;
+}
+
+/* Writer */
+.flexui-main-writer {
+    -fx-border-color: transparent;
 }
 
 /* Web panel */

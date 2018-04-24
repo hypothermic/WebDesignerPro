@@ -9,8 +9,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.animation.FadeTransition;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.concurrent.WorkerStateEvent;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -38,6 +36,8 @@ import nl.hypothermic.webdespro.io.FileExplorerFactory;
 import nl.hypothermic.webdespro.io.FileReadService;
 import nl.hypothermic.webdespro.io.Icons;
 import nl.hypothermic.webdespro.io.RelativeFile;
+import nl.hypothermic.webdespro.ui.dynamic.DoubleDialog;
+import nl.hypothermic.webdespro.ui.dynamic.DynListener;
 
 /******************************\
  * > InterfaceController.java *
@@ -63,7 +63,7 @@ public class InterfaceController implements Initializable {
 	@FXML protected WebView webc;
 	
 	// Edit area
-	@FXML private TextArea writer; // TODO
+	@FXML private TextArea writer;
 	private final FileReadService frs = new FileReadService();
 	
 	// File Explorer
@@ -258,8 +258,13 @@ public class InterfaceController implements Initializable {
 		webc.getEngine().reload();
 	}
 	
-	@FXML private void onEditReplace() {
-		
+	@FXML private void onEditReplace() throws IOException {
+		DoubleDialog dd = new DoubleDialog("Replace", "Replace text according to a regex", "Regex", "New value");
+		dd.addListener(new DynListener() {
+			public void onClose(String... out) {
+				writer.setText(writer.getText().replaceAll(out[0], out[1]));
+			}
+		});
 	}
 	
 	// Landscape // TODO: don't mess with Anchors, set width & height.

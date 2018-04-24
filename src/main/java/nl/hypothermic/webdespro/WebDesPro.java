@@ -40,6 +40,7 @@ public class WebDesPro extends Application {
         xs.setScene(new Scene(root));
         fade.playFromStart();
 	    xs.show();
+	    StageManager.setTitle("WebDesPro");
 	    StageManager.maximize();
 	}
 }

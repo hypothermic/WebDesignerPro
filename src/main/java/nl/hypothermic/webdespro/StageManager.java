@@ -3,6 +3,7 @@ package nl.hypothermic.webdespro;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
@@ -35,6 +36,10 @@ public class StageManager {
 	
 	public static void setIcon(final String url) {
 		xs.getIcons().add(new Image(url));
+	}
+	
+	public static AnchorPane getRoot() {
+		return (AnchorPane) xs.getScene().getRoot();
 	}
 	
 	// Minimize to taskbar

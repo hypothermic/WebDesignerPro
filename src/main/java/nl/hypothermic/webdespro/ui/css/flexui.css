@@ -130,7 +130,7 @@
 
 /* Scroll bars for writer and explorer */
 
-.flexui-main-writer .scroll-pane
+.flexui-main-writer .scroll-pane,
 .flexui-toolmenu-splitter-top .scroll-pane {
     -fx-background-color: black;
 }

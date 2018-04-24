@@ -1,2 +1,4 @@
 # I hope that GitHub will pick this up:
 *.fxml linguist-language=CSS
+*.txt linguist-language=CSS
+*.xml linguist-language=CSS

@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>nl.hypothermic</groupId>
   <artifactId>webdespro</artifactId>
-  <version>1.00-RELEASE</version>
+  <version>1.01-RELEASE</version>
   <name>Web Designer Pro</name>
   <description>A simple web designer program written in JavaFX
 

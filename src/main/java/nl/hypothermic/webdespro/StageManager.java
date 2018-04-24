@@ -1,6 +1,7 @@
 package nl.hypothermic.webdespro;
 
 import javafx.geometry.Rectangle2D;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
@@ -22,6 +23,18 @@ public class StageManager {
 		} else {
 			throw new RuntimeException("Invalid attempt to replace StageManager's stage.");
 		}
+	}
+	
+	public static void setTitle(final String title) {
+		xs.setTitle(title);
+	}
+	
+	public static void setIcon(final Image img) {
+		xs.getIcons().add(img);
+	}
+	
+	public static void setIcon(final String url) {
+		xs.getIcons().add(new Image(url));
 	}
 	
 	// Minimize to taskbar

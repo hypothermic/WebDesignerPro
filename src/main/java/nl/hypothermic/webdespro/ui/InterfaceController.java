@@ -46,6 +46,7 @@ import nl.hypothermic.webdespro.io.RelativeFile;
  * See LICENSE.txt for legal  *
 \******************************/
 
+@SuppressWarnings({"rawtypes"})
 public class InterfaceController implements Initializable {
 	
 	// Menu
@@ -255,6 +256,10 @@ public class InterfaceController implements Initializable {
 	
 	@FXML private void onWebRefresh() {
 		webc.getEngine().reload();
+	}
+	
+	@FXML private void onEditReplace() {
+		
 	}
 	
 	// Landscape // TODO: don't mess with Anchors, set width & height.

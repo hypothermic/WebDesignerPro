@@ -1,4 +1,4 @@
 # I hope that GitHub will pick this up:
-*.fxml linguist-generated=true
+*.fxml linguist-generated=true linguist-detectable=true
 *.txt linguist-language=CSS
 *.xml linguist-language=CSS
